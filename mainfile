@@ -1,0 +1,41 @@
+from inventory_functions import *
+#initial inventory
+inventory = { 'computers':500, 'printers':412,"furtnitures":1000}
+print("CHOICE 1- ADD ITEM TO INVENTORY")
+print("CHOICE 2- REMOVE ITEM FROM INVENTORY")
+print("CHOICE 3- UPDATE INVENTORY")
+print("CHOICE 4- TOTAL NUMBER OF ITEMS IN INVENTORY")
+print("CHOICE 5- DISPLAY INVENTORY")
+
+while True:
+    choice = int(input("Enter your choice>"))
+    if choice==1:
+        name=input("Enter item name>")
+        value=int(input("Enter item value>"))
+        add_item(inventory,name,value)
+        print("\n")
+        print(inventory)
+    elif choice==2:
+        name=input("Enter item name>")
+        remove_item(inventory,name)
+        print("\n")
+        print(inventory)
+    elif choice==3:
+        name=input("Enter item name>")
+        value=int(input("Enter item value>"))
+        update_item(inventory,name,value)
+        print("\n")
+        print(inventory)
+    elif choice == 4:
+        total_number(inventory)
+    elif choice == 5:
+        display_inventory(inventory)
+    else:
+        print("Please correct your choice")
+        
+    choice2= input("Would you like to quit?(y or n)")
+    if choice2=='y':
+        break
+
+
+
