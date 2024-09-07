@@ -1,0 +1,48 @@
+#adding an item
+def add_item(inventory,name,value):
+    if inventory:
+        inventory[name]=value
+        print(f"inventory {name} is added")
+    else:
+        print("NO inventory")
+#removing an item
+def remove_item(inventory,name):
+    if name in inventory.keys():
+        del inventory[name]
+        print(f"inventory {name} is removed")
+    else:
+        print("there is no item to be removed")
+
+#update an item in the inventory
+def update_item(inventory,name,value):
+    if name in inventory.keys():
+        inventory[name]+=value
+        print(f"{name} is updated")
+    else:
+        print(f"There is {name} item. Instead it's going to be added as new")
+        add_item(inventory,name,value)
+
+#calculate the total number of items in inventory
+
+def total_number(inventory):
+    sum = 0
+    if inventory:
+        for value in inventory.values():
+            sum+=value
+        print(f"Total items numbers is {sum}")
+    else:
+        print("There is no inventory")
+#display the inventory available in store
+
+def display_inventory(inventory):
+    if inventory:
+        print("Inventory List")
+        print("-"*30)
+        for k,v in inventory.items():
+            print(f"{k}:{v}")
+        print("-"*30)
+    else:
+        print("There is nothing to display")
+
+
+        
